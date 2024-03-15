@@ -1,0 +1,9 @@
+ 20231109-145623,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.691924 - AUC: 0.668538
+ 20231109-160935,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.586606 - AUC: 0.717279
+ 20231109-161126,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.586606 - AUC: 0.717279
+ 20231109-161550,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.586606 - AUC: 0.717279
+ 20231109-161937,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.580389 - AUC: 0.720738
+ 20231109-163952,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.589286 - AUC: 0.678688
+ 20231109-165949,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.591867 - AUC: 0.673870
+ 20231109-204145,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.590863 - AUC: 0.673753
+ 20231110-151815,[command] python D:\MyProjects\FuxiCTR_Project\FuxiCTR\main_experiment.py,[exp_id] widedeep_taobao,[dataset_id] taobao,[train] N.A.,[val] logloss: 0.554997 - AUC: 0.749696
