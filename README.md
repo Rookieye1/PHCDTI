@@ -41,7 +41,6 @@ python main_experiments.py
 + PHCDTI.py: PHCDTI model architecture.
 + model_config.yaml: set the hyperparameter of PHCDTI
 + dataset_config.yaml: Variable information in PHCDTI
-+ 
 
 
 ## Cite
@@ -56,4 +55,4 @@ All experiments were conducted on the open source framework Huawei FuxiCTR, for 
 ```
 # Run:
 
-python HpyerAttentionDTI_main.py
+python main_experiment.py
