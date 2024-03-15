@@ -20,10 +20,10 @@ python main_experiments.py
 ## Resources:
 + README.md: this file.
 + data: The datasets used in paper.
-	+ DrugBank.txt:  
-	+ KIBA.txt: 
-	+ Davis.txt
-	In the directory of data, we now have the original data "DrugBank/KIBA/Davis.txt" as follows:
+	+ DrugBank.csv: 
+	+ KIBA.csv: 
+	+ Davis.csv
+	In the directory of data, we now have the original data "DrugBank/KIBA/Davis.csv" as follows:
 
 	```
 	Drug_ID Protein_ID Drug_SMILES Amino_acid_sequence interaction
