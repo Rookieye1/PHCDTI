@@ -1,5 +1,5 @@
 # PHCDTI
-Implementation of some SOTA CDR algorithm based on FuxiCTR open source framework
+Implementation of some SOTA CTR algorithm based on FuxiCTR open source framework
 
 The raw data is too large to upload, we recommend users to customize their own dataset in the ```dataset.yaml```
 ## Environment
