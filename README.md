@@ -23,7 +23,7 @@ python main_experiments.py
 	+ DrugBank.csv: 
 	+ KIBA.csv: 
 	+ Davis.csv
-	In the directory of data, we now have the original data "DrugBank/KIBA/Davis.csv" as follows:
+	The KIBA.csv file is too large to upload. In the directory of data, we now have the original data "DrugBank/KIBA/Davis.csv" as follows:
 
 	```
 	Drug_ID Protein_ID Drug_SMILES Amino_acid_sequence interaction
@@ -37,7 +37,6 @@ python main_experiments.py
 	DB08532 O00341 FC1=CC=CC=C1C1=... MVPHAILARGRDVCRRNGLLI... 0
 
 	```
-        + The KIBA.csv file is too large to upload
 
 
 
