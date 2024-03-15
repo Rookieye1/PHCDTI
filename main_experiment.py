@@ -51,7 +51,7 @@ if __name__ == '__main__':
         parser = argparse.ArgumentParser()
         parser.add_argument('--version', type=str, default='pytorch', help='The model version.')
         parser.add_argument('--gpu', type=int, default=0, help='The gpu index, -1 for cpu')
-        parser.add_argument('--config', type=str, default='./config/ctrmodel_in_criteo&avazu',
+        parser.add_argument('--config', type=str, default='./config/model',
                             help='The config directory.')
         parser.add_argument('--expid', type=str, default=experment_id, help='The experiment id to run.')
         args = vars(parser.parse_args())
