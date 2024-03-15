@@ -1,7 +1,6 @@
 # PHCDTI
-Implementation of some SOTA CTR algorithm based on FuxiCTR open source framework
-
-The raw data is too large to upload, we recommend users to customize their own dataset in the ```dataset.yaml```
+A Parallel Drug–Protein Interaction Prediction Model Based on Deep Learning and Attention Mechanism.
+This repository contains the source code and the data.
 ## Environment
 ```
 pip install -r requirements.txt
