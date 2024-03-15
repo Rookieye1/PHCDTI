@@ -1,0 +1,136 @@
+2024-03-15 22:44:09,448 P23748 INFO {
+    "attention_dim": "20",
+    "batch_size": "32",
+    "data_block_size": "-1",
+    "data_format": "csv",
+    "data_root": "../../dataset/",
+    "dataset_id": "Davis",
+    "debug": "False",
+    "dnn_activations": "LeakyReLU",
+    "dnn_hidden_units": "[1024, 512, 512, 256]",
+    "embedding_dim": "64",
+    "embedding_regularizer": "0.11",
+    "epochs": "60",
+    "every_x_epochs": "1",
+    "feature_cols": "[{'name': 'Drug_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Protein_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Drug_SMILES', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Amino_acid_sequence', 'active': True, 'dtype': 'str', 'type': 'categorical'}]",
+    "gpu": "0",
+    "label_col": "{'name': 'interaction', 'dtype': 'float'}",
+    "learning_rate": "0.0001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'ACC', 'Recall', 'Precision', 'AUPR']",
+    "min_categr_count": "2",
+    "model": "PHCDTI",
+    "model_id": "hoa_Davis",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': -1}",
+    "monitor_mode": "max",
+    "net_dropout": "0.12",
+    "net_regularizer": "0",
+    "num_heads": "5",
+    "optimizer": "Adamax",
+    "patience": "2",
+    "pickle_feature_encoder": "True",
+    "reduction_ratio": "0.7",
+    "save_best_only": "True",
+    "seed": "2029",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./dataset/DTIs/Davis/Davis_testE1.csv",
+    "train_data": "./dataset/DTIs/Davis/Davis_trainE1.csv",
+    "use_hdf5": "True",
+    "valid_data": "./dataset/DTIs/Davis/Davis_testE1.csv",
+    "verbose": "1",
+    "version": "pytorch",
+    "workers": "12"
+}
+2024-03-15 22:44:09,449 P23748 INFO Set up feature encoder...
+2024-03-15 22:44:09,449 P23748 INFO Load feature_map from json: ../../dataset/Davis\feature_map.json
+2024-03-15 22:44:09,450 P23748 INFO Loading data...
+2024-03-15 22:44:09,450 P23748 INFO Loading data from h5: ../../dataset/Davis\train.h5
+2024-03-15 22:44:09,452 P23748 INFO Loading data from h5: ../../dataset/Davis\valid.h5
+2024-03-15 22:44:09,452 P23748 INFO Train samples: total/20617, pos/5884, neg/14733, ratio/28.54%, blocks/1
+2024-03-15 22:44:09,453 P23748 INFO Validation samples: total/5155, pos/1436, neg/3719, ratio/27.86%, blocks/1
+2024-03-15 22:44:09,453 P23748 INFO Loading train data done.
+2024-03-15 22:44:09,473 P23748 INFO Total number of parameters: 2480364.
+2024-03-15 22:44:09,473 P23748 INFO Start training: 645 batches/epoch
+2024-03-15 22:44:09,473 P23748 INFO ************ Epoch=1 start ************
+2024-03-15 22:45:33,433 P23748 INFO [Metrics] logloss: 0.452634 - ACC: 0.795344 - Precision: 0.797192 - Recall: 0.355850 - AUC: 0.906662 - AUPR: 0.666239
+2024-03-15 22:45:33,434 P23748 INFO Save best model: monitor(max): 0.454028
+2024-03-15 22:45:33,444 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:45:33,775 P23748 INFO Train loss: 0.514283
+2024-03-15 22:45:33,775 P23748 INFO ************ Epoch=1 end ************
+2024-03-15 22:46:12,229 P23748 INFO [Metrics] logloss: 0.416496 - ACC: 0.808729 - Precision: 0.694301 - Recall: 0.559889 - AUC: 0.922247 - AUPR: 0.688394
+2024-03-15 22:46:12,229 P23748 INFO Save best model: monitor(max): 0.505751
+2024-03-15 22:46:12,238 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:46:12,529 P23748 INFO Train loss: 0.429909
+2024-03-15 22:46:12,529 P23748 INFO ************ Epoch=2 end ************
+2024-03-15 22:46:50,831 P23748 INFO [Metrics] logloss: 0.410100 - ACC: 0.811057 - Precision: 0.696095 - Recall: 0.571031 - AUC: 0.926036 - AUPR: 0.693311
+2024-03-15 22:46:50,831 P23748 INFO Save best model: monitor(max): 0.515936
+2024-03-15 22:46:50,840 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:46:51,145 P23748 INFO Train loss: 0.413683
+2024-03-15 22:46:51,145 P23748 INFO ************ Epoch=3 end ************
+2024-03-15 22:47:30,000 P23748 INFO [Metrics] logloss: 0.406518 - ACC: 0.815713 - Precision: 0.700495 - Recall: 0.591226 - AUC: 0.928606 - AUPR: 0.702795
+2024-03-15 22:47:30,000 P23748 INFO Save best model: monitor(max): 0.522087
+2024-03-15 22:47:30,010 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:47:30,323 P23748 INFO Train loss: 0.407882
+2024-03-15 22:47:30,323 P23748 INFO ************ Epoch=4 end ************
+2024-03-15 22:48:09,056 P23748 INFO [Metrics] logloss: 0.405278 - ACC: 0.817653 - Precision: 0.719858 - Recall: 0.565460 - AUC: 0.930964 - AUPR: 0.703183
+2024-03-15 22:48:09,056 P23748 INFO Save best model: monitor(max): 0.525686
+2024-03-15 22:48:09,065 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:48:09,363 P23748 INFO Train loss: 0.403639
+2024-03-15 22:48:09,364 P23748 INFO ************ Epoch=5 end ************
+2024-03-15 22:48:48,175 P23748 INFO [Metrics] logloss: 0.400114 - ACC: 0.817265 - Precision: 0.696656 - Recall: 0.609331 - AUC: 0.933564 - AUPR: 0.707407
+2024-03-15 22:48:48,175 P23748 INFO Save best model: monitor(max): 0.533450
+2024-03-15 22:48:48,246 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:48:48,563 P23748 INFO Train loss: 0.400783
+2024-03-15 22:48:48,563 P23748 INFO ************ Epoch=6 end ************
+2024-03-15 22:49:27,965 P23748 INFO [Metrics] logloss: 0.395053 - ACC: 0.815907 - Precision: 0.688613 - Recall: 0.619081 - AUC: 0.936729 - AUPR: 0.706902
+2024-03-15 22:49:27,965 P23748 INFO Save best model: monitor(max): 0.541676
+2024-03-15 22:49:27,975 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:49:28,299 P23748 INFO Train loss: 0.395044
+2024-03-15 22:49:28,300 P23748 INFO ************ Epoch=7 end ************
+2024-03-15 22:50:07,261 P23748 INFO [Metrics] logloss: 0.386253 - ACC: 0.824248 - Precision: 0.729636 - Recall: 0.586351 - AUC: 0.942309 - AUPR: 0.715607
+2024-03-15 22:50:07,261 P23748 INFO Save best model: monitor(max): 0.556056
+2024-03-15 22:50:07,270 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:50:07,579 P23748 INFO Train loss: 0.388268
+2024-03-15 22:50:07,579 P23748 INFO ************ Epoch=8 end ************
+2024-03-15 22:51:19,774 P23748 INFO [Metrics] logloss: 0.389137 - ACC: 0.818429 - Precision: 0.671939 - Recall: 0.680362 - AUC: 0.945905 - AUPR: 0.720671
+2024-03-15 22:51:19,774 P23748 INFO Save best model: monitor(max): 0.556768
+2024-03-15 22:51:19,783 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:51:20,140 P23748 INFO Train loss: 0.380934
+2024-03-15 22:51:20,140 P23748 INFO ************ Epoch=9 end ************
+2024-03-15 22:51:58,454 P23748 INFO [Metrics] logloss: 0.375171 - ACC: 0.830650 - Precision: 0.727935 - Recall: 0.626045 - AUC: 0.949747 - AUPR: 0.729075
+2024-03-15 22:51:58,454 P23748 INFO Save best model: monitor(max): 0.574576
+2024-03-15 22:51:58,463 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:51:58,769 P23748 INFO Train loss: 0.374847
+2024-03-15 22:51:58,769 P23748 INFO ************ Epoch=10 end ************
+2024-03-15 22:52:36,462 P23748 INFO [Metrics] logloss: 0.367124 - ACC: 0.833172 - Precision: 0.722222 - Recall: 0.651811 - AUC: 0.956061 - AUPR: 0.735513
+2024-03-15 22:52:36,462 P23748 INFO Save best model: monitor(max): 0.588937
+2024-03-15 22:52:36,472 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:52:36,785 P23748 INFO Train loss: 0.365697
+2024-03-15 22:52:36,785 P23748 INFO ************ Epoch=11 end ************
+2024-03-15 22:53:15,025 P23748 INFO [Metrics] logloss: 0.368815 - ACC: 0.828322 - Precision: 0.685772 - Recall: 0.708217 - AUC: 0.960449 - AUPR: 0.737635
+2024-03-15 22:53:15,026 P23748 INFO Save best model: monitor(max): 0.591635
+2024-03-15 22:53:15,035 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:53:15,393 P23748 INFO Train loss: 0.357463
+2024-03-15 22:53:15,393 P23748 INFO ************ Epoch=12 end ************
+2024-03-15 22:53:56,625 P23748 INFO [Metrics] logloss: 0.359331 - ACC: 0.833948 - Precision: 0.704513 - Recall: 0.695682 - AUC: 0.964224 - AUPR: 0.742484
+2024-03-15 22:53:56,625 P23748 INFO Save best model: monitor(max): 0.604893
+2024-03-15 22:53:56,634 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:53:56,950 P23748 INFO Train loss: 0.349207
+2024-03-15 22:53:56,950 P23748 INFO ************ Epoch=13 end ************
+2024-03-15 22:54:37,586 P23748 INFO [Metrics] logloss: 0.352267 - ACC: 0.841125 - Precision: 0.718330 - Recall: 0.706825 - AUC: 0.968399 - AUPR: 0.753411
+2024-03-15 22:54:37,586 P23748 INFO Save best model: monitor(max): 0.616132
+2024-03-15 22:54:37,595 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:54:37,926 P23748 INFO Train loss: 0.341164
+2024-03-15 22:54:37,926 P23748 INFO ************ Epoch=14 end ************
+2024-03-15 22:55:19,741 P23748 INFO [Metrics] logloss: 0.348759 - ACC: 0.841125 - Precision: 0.716188 - Recall: 0.711699 - AUC: 0.971219 - AUPR: 0.754099
+2024-03-15 22:55:19,741 P23748 INFO Save best model: monitor(max): 0.622460
+2024-03-15 22:55:19,751 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:55:20,096 P23748 INFO Train loss: 0.331855
+2024-03-15 22:55:20,096 P23748 INFO ************ Epoch=15 end ************
+2024-03-15 22:56:01,230 P23748 INFO [Metrics] logloss: 0.347356 - ACC: 0.844423 - Precision: 0.748823 - Recall: 0.664345 - AUC: 0.971317 - AUPR: 0.753335
+2024-03-15 22:56:01,231 P23748 INFO Save best model: monitor(max): 0.623961
+2024-03-15 22:56:01,240 P23748 INFO --- 645/645 batches finished ---
+2024-03-15 22:56:01,551 P23748 INFO Train loss: 0.327399
+2024-03-15 22:56:01,551 P23748 INFO ************ Epoch=16 end ************

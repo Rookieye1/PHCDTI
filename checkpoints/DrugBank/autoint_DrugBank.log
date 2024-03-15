@@ -1,0 +1,81 @@
+2024-01-17 10:59:56,830 P15188 INFO {
+    "batch_size": "32",
+    "data_block_size": "-1",
+    "data_format": "csv",
+    "data_root": "../../dataset/",
+    "dataset_id": "DrugBank",
+    "debug": "False",
+    "debug_mode": "False",
+    "dnn_activations": "LeakyReLU",
+    "dnn_hidden_units": "[1024, 512, 512]",
+    "early_stop_patience": "3",
+    "embedding_dim": "32",
+    "epochs": "100",
+    "eval_steps": "None",
+    "every_x_epochs": "1",
+    "feature_cols": "[{'name': 'Drug_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Protein_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Drug_SMILES', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Amino_acid_sequence', 'active': True, 'dtype': 'str', 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "0",
+    "group_id": "None",
+    "label_col": "{'name': 'interaction', 'dtype': 'float'}",
+    "learning_rate": "8e-05",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "AutoInt",
+    "model_id": "autoint_DrugBank",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': -1}",
+    "monitor_mode": "max",
+    "net_dropout": "0.12",
+    "net_regularizer": "0",
+    "num_workers": "3",
+    "optimizer": "Adamax",
+    "patience": "3",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./dataset/DTIs/DrugBank/test_data.csv",
+    "train_data": "./dataset/DTIs/DrugBank/train_data.csv",
+    "use_features": "None",
+    "use_hdf5": "True",
+    "valid_data": "./dataset/DTIs/DrugBank/validation_data.csv",
+    "verbose": "1",
+    "version": "pytorch",
+    "workers": "12"
+}
+2024-01-17 10:59:56,832 P15188 INFO Set up feature encoder...
+2024-01-17 10:59:56,832 P15188 INFO Load feature_map from json: ../../dataset/DrugBank\feature_map.json
+2024-01-17 10:59:56,832 P15188 INFO Loading data...
+2024-01-17 10:59:56,833 P15188 INFO Loading data from h5: ../../dataset/DrugBank\train.h5
+2024-01-17 10:59:56,834 P15188 INFO Loading data from h5: ../../dataset/DrugBank\valid.h5
+2024-01-17 10:59:56,835 P15188 INFO Train samples: total/22414, pos/11210, neg/11204, ratio/50.01%, blocks/1
+2024-01-17 10:59:56,835 P15188 INFO Validation samples: total/5547, pos/2782, neg/2765, ratio/50.15%, blocks/1
+2024-01-17 10:59:56,835 P15188 INFO Loading train data done.
+2024-01-17 10:59:56,851 P15188 INFO Total number of parameters: 2210306.
+2024-01-17 10:59:56,852 P15188 INFO Start training: 701 batches/epoch
+2024-01-17 10:59:56,852 P15188 INFO ************ Epoch=1 start ************
+2024-01-17 11:00:52,998 P15188 INFO [Metrics] logloss: 0.505445 - AUC: 0.838206
+2024-01-17 11:00:52,999 P15188 INFO Save best model: monitor(max): 0.332762
+2024-01-17 11:00:53,006 P15188 INFO --- 701/701 batches finished ---
+2024-01-17 11:00:53,362 P15188 INFO Train loss: 0.629625
+2024-01-17 11:00:53,362 P15188 INFO ************ Epoch=1 end ************
+2024-01-17 11:01:39,670 P15188 INFO [Metrics] logloss: 0.487186 - AUC: 0.847629
+2024-01-17 11:01:39,670 P15188 INFO Save best model: monitor(max): 0.360443
+2024-01-17 11:01:39,678 P15188 INFO --- 701/701 batches finished ---
+2024-01-17 11:01:40,026 P15188 INFO Train loss: 0.442585
+2024-01-17 11:01:40,026 P15188 INFO ************ Epoch=2 end ************
+2024-01-17 11:02:28,231 P15188 INFO [Metrics] logloss: 0.476152 - AUC: 0.853453
+2024-01-17 11:02:28,232 P15188 INFO Save best model: monitor(max): 0.377301
+2024-01-17 11:02:28,239 P15188 INFO --- 701/701 batches finished ---
+2024-01-17 11:02:28,603 P15188 INFO Train loss: 0.386018
+2024-01-17 11:02:28,603 P15188 INFO ************ Epoch=3 end ************
+2024-01-17 11:03:17,988 P15188 INFO [Metrics] logloss: 0.492773 - AUC: 0.851954
+2024-01-17 11:03:17,988 P15188 INFO Monitor(max) STOP: 0.359181 !
+2024-01-17 11:03:17,988 P15188 INFO Reduce learning rate on plateau: 0.000008
+2024-01-17 11:03:17,988 P15188 INFO --- 701/701 batches finished ---
+2024-01-17 11:03:18,360 P15188 INFO Train loss: 0.361291
+2024-01-17 11:03:18,360 P15188 INFO ************ Epoch=4 end ************

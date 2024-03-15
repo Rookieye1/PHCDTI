@@ -1,0 +1,216 @@
+2024-03-15 15:03:15,747 P12744 INFO {
+    "attention_dim": "20",
+    "batch_size": "32",
+    "data_block_size": "-1",
+    "data_format": "csv",
+    "data_root": "../../dataset/",
+    "dataset_id": "KIBA",
+    "debug": "False",
+    "debug_mode": "False",
+    "dnn_activations": "LeakyReLU",
+    "dnn_hidden_units": "[1024, 512, 512, 256]",
+    "early_stop_patience": "2",
+    "embedding_dim": "64",
+    "embedding_regularizer": "0.11",
+    "epochs": "60",
+    "eval_steps": "None",
+    "every_x_epochs": "1",
+    "feature_cols": "[{'name': 'Drug_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Protein_ID', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Drug_SMILES', 'active': True, 'dtype': 'str', 'type': 'categorical'}, {'name': 'Amino_acid_sequence', 'active': True, 'dtype': 'str', 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gpu": "0",
+    "group_id": "None",
+    "label_col": "{'name': 'interaction', 'dtype': 'float'}",
+    "learning_rate": "0.0001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'ACC', 'Recall', 'Precision', 'AUPR']",
+    "min_categr_count": "2",
+    "model": "HOA",
+    "model_id": "hoa_kiba",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': -1}",
+    "monitor_mode": "max",
+    "net_dropout": "0.12",
+    "net_regularizer": "0",
+    "num_heads": "8",
+    "num_workers": "3",
+    "optimizer": "Adamax",
+    "patience": "2",
+    "pickle_feature_encoder": "True",
+    "reduction_ratio": "0.7",
+    "save_best_only": "True",
+    "seed": "2025",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "./dataset/DTIs/KIBA/KIBA_testE1.csv",
+    "train_data": "./dataset/DTIs/KIBA/KIBA_trainE1.csv",
+    "use_features": "None",
+    "use_hdf5": "True",
+    "valid_data": "./dataset/DTIs/KIBA/KIBA_testE1.csv",
+    "verbose": "1",
+    "version": "pytorch",
+    "workers": "12"
+}
+2024-03-15 15:03:15,748 P12744 INFO Set up feature encoder...
+2024-03-15 15:03:15,748 P12744 INFO Load feature_map from json: ../../dataset/KIBA\feature_map.json
+2024-03-15 15:03:15,748 P12744 INFO Loading data...
+2024-03-15 15:03:15,749 P12744 INFO Loading data from h5: ../../dataset/KIBA\train.h5
+2024-03-15 15:03:15,752 P12744 INFO Loading data from h5: ../../dataset/KIBA\valid.h5
+2024-03-15 15:03:15,753 P12744 INFO Train samples: total/93080, pos/17691, neg/75389, ratio/19.01%, blocks/1
+2024-03-15 15:03:15,753 P12744 INFO Validation samples: total/23270, pos/4463, neg/18807, ratio/19.18%, blocks/1
+2024-03-15 15:03:15,753 P12744 INFO Loading train data done.
+2024-03-15 15:03:15,774 P12744 INFO Total number of parameters: 2762264.
+2024-03-15 15:03:15,774 P12744 INFO Start training: 2909 batches/epoch
+2024-03-15 15:03:15,774 P12744 INFO ************ Epoch=1 start ************
+2024-03-15 15:10:12,996 P12744 INFO [Metrics] logloss: 0.349959 - ACC: 0.853717 - Precision: 0.742112 - Recall: 0.363657 - AUC: 0.847188 - AUPR: 0.613907
+2024-03-15 15:10:12,996 P12744 INFO Save best model: monitor(max): 0.497229
+2024-03-15 15:10:13,006 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:10:13,393 P12744 INFO Train loss: 0.394169
+2024-03-15 15:10:13,393 P12744 INFO ************ Epoch=1 end ************
+2024-03-15 15:13:02,554 P12744 INFO [Metrics] logloss: 0.345322 - ACC: 0.853373 - Precision: 0.727588 - Recall: 0.376428 - AUC: 0.852610 - AUPR: 0.611806
+2024-03-15 15:13:02,554 P12744 INFO Save best model: monitor(max): 0.507288
+2024-03-15 15:13:02,564 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:13:02,944 P12744 INFO Train loss: 0.351831
+2024-03-15 15:13:02,944 P12744 INFO ************ Epoch=2 end ************
+2024-03-15 15:15:50,206 P12744 INFO [Metrics] logloss: 0.343472 - ACC: 0.855522 - Precision: 0.736571 - Recall: 0.384047 - AUC: 0.855385 - AUPR: 0.619376
+2024-03-15 15:15:50,206 P12744 INFO Save best model: monitor(max): 0.511912
+2024-03-15 15:15:50,215 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:15:50,579 P12744 INFO Train loss: 0.350289
+2024-03-15 15:15:50,579 P12744 INFO ************ Epoch=3 end ************
+2024-03-15 15:18:40,648 P12744 INFO [Metrics] logloss: 0.342948 - ACC: 0.855565 - Precision: 0.696645 - Recall: 0.437374 - AUC: 0.856075 - AUPR: 0.620963
+2024-03-15 15:18:40,648 P12744 INFO Save best model: monitor(max): 0.513126
+2024-03-15 15:18:40,658 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:18:41,051 P12744 INFO Train loss: 0.349238
+2024-03-15 15:18:41,051 P12744 INFO ************ Epoch=4 end ************
+2024-03-15 15:21:28,405 P12744 INFO [Metrics] logloss: 0.342356 - ACC: 0.856038 - Precision: 0.745695 - Recall: 0.378445 - AUC: 0.856945 - AUPR: 0.621675
+2024-03-15 15:21:28,405 P12744 INFO Save best model: monitor(max): 0.514589
+2024-03-15 15:21:28,414 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:21:28,785 P12744 INFO Train loss: 0.348967
+2024-03-15 15:21:28,785 P12744 INFO ************ Epoch=5 end ************
+2024-03-15 15:24:24,024 P12744 INFO [Metrics] logloss: 0.341407 - ACC: 0.857327 - Precision: 0.727962 - Recall: 0.408918 - AUC: 0.857299 - AUPR: 0.625122
+2024-03-15 15:24:24,024 P12744 INFO Save best model: monitor(max): 0.515892
+2024-03-15 15:24:24,033 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:24:24,411 P12744 INFO Train loss: 0.348685
+2024-03-15 15:24:24,411 P12744 INFO ************ Epoch=6 end ************
+2024-03-15 15:28:34,710 P12744 INFO [Metrics] logloss: 0.340215 - ACC: 0.856425 - Precision: 0.733361 - Recall: 0.395026 - AUC: 0.858223 - AUPR: 0.622208
+2024-03-15 15:28:34,711 P12744 INFO Save best model: monitor(max): 0.518008
+2024-03-15 15:28:34,720 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:28:35,097 P12744 INFO Train loss: 0.346847
+2024-03-15 15:28:35,097 P12744 INFO ************ Epoch=7 end ************
+2024-03-15 15:32:27,768 P12744 INFO [Metrics] logloss: 0.339372 - ACC: 0.859003 - Precision: 0.736400 - Recall: 0.412503 - AUC: 0.858335 - AUPR: 0.630790
+2024-03-15 15:32:27,768 P12744 INFO Save best model: monitor(max): 0.518963
+2024-03-15 15:32:27,777 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:32:28,156 P12744 INFO Train loss: 0.346055
+2024-03-15 15:32:28,156 P12744 INFO ************ Epoch=8 end ************
+2024-03-15 15:35:14,910 P12744 INFO [Metrics] logloss: 0.338246 - ACC: 0.858015 - Precision: 0.719258 - Recall: 0.425947 - AUC: 0.858410 - AUPR: 0.627652
+2024-03-15 15:35:14,910 P12744 INFO Save best model: monitor(max): 0.520164
+2024-03-15 15:35:14,920 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:35:15,294 P12744 INFO Train loss: 0.345157
+2024-03-15 15:35:15,295 P12744 INFO ************ Epoch=9 end ************
+2024-03-15 15:40:31,234 P12744 INFO [Metrics] logloss: 0.337360 - ACC: 0.857499 - Precision: 0.730044 - Recall: 0.407797 - AUC: 0.859440 - AUPR: 0.625711
+2024-03-15 15:40:31,234 P12744 INFO Save best model: monitor(max): 0.522080
+2024-03-15 15:40:31,243 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:40:31,636 P12744 INFO Train loss: 0.343978
+2024-03-15 15:40:31,636 P12744 INFO ************ Epoch=10 end ************
+2024-03-15 15:43:48,057 P12744 INFO [Metrics] logloss: 0.337216 - ACC: 0.857370 - Precision: 0.719662 - Recall: 0.419897 - AUC: 0.859792 - AUPR: 0.625409
+2024-03-15 15:43:48,057 P12744 INFO Save best model: monitor(max): 0.522576
+2024-03-15 15:43:48,066 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:43:48,455 P12744 INFO Train loss: 0.343583
+2024-03-15 15:43:48,456 P12744 INFO ************ Epoch=11 end ************
+2024-03-15 15:46:34,465 P12744 INFO [Metrics] logloss: 0.337883 - ACC: 0.858358 - Precision: 0.728913 - Recall: 0.416312 - AUC: 0.859278 - AUPR: 0.628586
+2024-03-15 15:46:34,466 P12744 INFO Monitor(max) STOP: 0.521396 !
+2024-03-15 15:46:34,466 P12744 INFO Reduce learning rate on plateau: 0.000010
+2024-03-15 15:46:34,466 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:46:34,865 P12744 INFO Train loss: 0.342521
+2024-03-15 15:46:34,865 P12744 INFO ************ Epoch=12 end ************
+2024-03-15 15:49:20,759 P12744 INFO [Metrics] logloss: 0.336992 - ACC: 0.858401 - Precision: 0.716136 - Recall: 0.433565 - AUC: 0.859948 - AUPR: 0.629169
+2024-03-15 15:49:20,759 P12744 INFO Save best model: monitor(max): 0.522956
+2024-03-15 15:49:20,768 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:49:21,139 P12744 INFO Train loss: 0.335945
+2024-03-15 15:49:21,140 P12744 INFO ************ Epoch=13 end ************
+2024-03-15 15:52:11,388 P12744 INFO [Metrics] logloss: 0.337109 - ACC: 0.858745 - Precision: 0.719076 - Recall: 0.432445 - AUC: 0.860190 - AUPR: 0.630187
+2024-03-15 15:52:11,388 P12744 INFO Save best model: monitor(max): 0.523080
+2024-03-15 15:52:11,398 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:52:11,777 P12744 INFO Train loss: 0.335526
+2024-03-15 15:52:11,778 P12744 INFO ************ Epoch=14 end ************
+2024-03-15 15:54:58,648 P12744 INFO [Metrics] logloss: 0.336666 - ACC: 0.858960 - Precision: 0.714338 - Recall: 0.440959 - AUC: 0.860411 - AUPR: 0.631258
+2024-03-15 15:54:58,648 P12744 INFO Save best model: monitor(max): 0.523745
+2024-03-15 15:54:58,657 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:54:59,032 P12744 INFO Train loss: 0.335307
+2024-03-15 15:54:59,032 P12744 INFO ************ Epoch=15 end ************
+2024-03-15 15:57:44,856 P12744 INFO [Metrics] logloss: 0.336912 - ACC: 0.858874 - Precision: 0.717447 - Recall: 0.435806 - AUC: 0.860488 - AUPR: 0.630730
+2024-03-15 15:57:44,857 P12744 INFO Monitor(max) STOP: 0.523575 !
+2024-03-15 15:57:44,857 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 15:57:44,857 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 15:57:45,243 P12744 INFO Train loss: 0.334799
+2024-03-15 15:57:45,243 P12744 INFO ************ Epoch=16 end ************
+2024-03-15 16:00:31,339 P12744 INFO [Metrics] logloss: 0.336649 - ACC: 0.858831 - Precision: 0.714650 - Recall: 0.439391 - AUC: 0.860526 - AUPR: 0.630781
+2024-03-15 16:00:31,339 P12744 INFO Save best model: monitor(max): 0.523877
+2024-03-15 16:00:31,348 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:00:31,727 P12744 INFO Train loss: 0.334140
+2024-03-15 16:00:31,727 P12744 INFO ************ Epoch=17 end ************
+2024-03-15 16:03:18,049 P12744 INFO [Metrics] logloss: 0.336636 - ACC: 0.858831 - Precision: 0.714494 - Recall: 0.439615 - AUC: 0.860539 - AUPR: 0.630793
+2024-03-15 16:03:18,049 P12744 INFO Save best model: monitor(max): 0.523903
+2024-03-15 16:03:18,059 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:03:18,427 P12744 INFO Train loss: 0.334036
+2024-03-15 16:03:18,428 P12744 INFO ************ Epoch=18 end ************
+2024-03-15 16:06:04,013 P12744 INFO [Metrics] logloss: 0.336607 - ACC: 0.858874 - Precision: 0.713355 - Recall: 0.441631 - AUC: 0.860540 - AUPR: 0.631038
+2024-03-15 16:06:04,013 P12744 INFO Save best model: monitor(max): 0.523933
+2024-03-15 16:06:04,022 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:06:04,382 P12744 INFO Train loss: 0.333426
+2024-03-15 16:06:04,382 P12744 INFO ************ Epoch=19 end ************
+2024-03-15 16:08:51,288 P12744 INFO [Metrics] logloss: 0.336619 - ACC: 0.858788 - Precision: 0.714078 - Recall: 0.439839 - AUC: 0.860544 - AUPR: 0.630675
+2024-03-15 16:08:51,288 P12744 INFO Monitor(max) STOP: 0.523926 !
+2024-03-15 16:08:51,288 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 16:08:51,288 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:08:51,656 P12744 INFO Train loss: 0.333740
+2024-03-15 16:08:51,656 P12744 INFO ************ Epoch=20 end ************
+2024-03-15 16:11:37,928 P12744 INFO [Metrics] logloss: 0.336605 - ACC: 0.858874 - Precision: 0.714130 - Recall: 0.440511 - AUC: 0.860551 - AUPR: 0.630973
+2024-03-15 16:11:37,928 P12744 INFO Save best model: monitor(max): 0.523946
+2024-03-15 16:11:37,938 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:11:38,308 P12744 INFO Train loss: 0.333860
+2024-03-15 16:11:38,308 P12744 INFO ************ Epoch=21 end ************
+2024-03-15 16:14:24,532 P12744 INFO [Metrics] logloss: 0.336618 - ACC: 0.858745 - Precision: 0.714442 - Recall: 0.438942 - AUC: 0.860561 - AUPR: 0.630495
+2024-03-15 16:14:24,532 P12744 INFO Monitor(max) STOP: 0.523943 !
+2024-03-15 16:14:24,532 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 16:14:24,532 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:14:24,902 P12744 INFO Train loss: 0.333997
+2024-03-15 16:14:24,902 P12744 INFO ************ Epoch=22 end ************
+2024-03-15 16:17:11,772 P12744 INFO [Metrics] logloss: 0.336579 - ACC: 0.858745 - Precision: 0.713974 - Recall: 0.439615 - AUC: 0.860566 - AUPR: 0.630533
+2024-03-15 16:17:11,772 P12744 INFO Save best model: monitor(max): 0.523987
+2024-03-15 16:17:11,781 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:17:12,146 P12744 INFO Train loss: 0.334227
+2024-03-15 16:17:12,146 P12744 INFO ************ Epoch=23 end ************
+2024-03-15 16:20:04,640 P12744 INFO [Metrics] logloss: 0.336605 - ACC: 0.858831 - Precision: 0.714650 - Recall: 0.439391 - AUC: 0.860569 - AUPR: 0.630781
+2024-03-15 16:20:04,640 P12744 INFO Monitor(max) STOP: 0.523963 !
+2024-03-15 16:20:04,640 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 16:20:04,640 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:20:05,044 P12744 INFO Train loss: 0.333804
+2024-03-15 16:20:05,044 P12744 INFO ************ Epoch=24 end ************
+2024-03-15 16:27:54,282 P12744 INFO [Metrics] logloss: 0.336567 - ACC: 0.858917 - Precision: 0.713923 - Recall: 0.441183 - AUC: 0.860571 - AUPR: 0.631141
+2024-03-15 16:27:54,283 P12744 INFO Save best model: monitor(max): 0.524004
+2024-03-15 16:27:54,292 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:27:54,684 P12744 INFO Train loss: 0.333861
+2024-03-15 16:27:54,684 P12744 INFO ************ Epoch=25 end ************
+2024-03-15 16:30:42,216 P12744 INFO [Metrics] logloss: 0.336689 - ACC: 0.858745 - Precision: 0.714912 - Recall: 0.438270 - AUC: 0.860543 - AUPR: 0.630459
+2024-03-15 16:30:42,216 P12744 INFO Monitor(max) STOP: 0.523855 !
+2024-03-15 16:30:42,216 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 16:30:42,216 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:30:42,591 P12744 INFO Train loss: 0.333580
+2024-03-15 16:30:42,591 P12744 INFO ************ Epoch=26 end ************
+2024-03-15 16:33:31,459 P12744 INFO [Metrics] logloss: 0.336623 - ACC: 0.858788 - Precision: 0.713612 - Recall: 0.440511 - AUC: 0.860550 - AUPR: 0.630714
+2024-03-15 16:33:31,459 P12744 INFO Monitor(max) STOP: 0.523927 !
+2024-03-15 16:33:31,459 P12744 INFO Reduce learning rate on plateau: 0.000001
+2024-03-15 16:33:31,459 P12744 INFO Early stopping at epoch=27
+2024-03-15 16:33:31,459 P12744 INFO --- 2909/2909 batches finished ---
+2024-03-15 16:33:31,846 P12744 INFO Train loss: 0.333221
+2024-03-15 16:33:31,846 P12744 INFO Training finished.
+2024-03-15 16:33:31,847 P12744 INFO Load best model: D:\MyProjects\PHCDTI\FuxiCTR\checkpoints\KIBA\hoa_kiba.model
+2024-03-15 16:33:31,854 P12744 INFO ****** Validation evaluation ******
+2024-03-15 16:33:45,864 P12744 INFO [Metrics] logloss: 0.336567 - ACC: 0.858917 - Precision: 0.713923 - Recall: 0.441183 - AUC: 0.860571 - AUPR: 0.631141
+2024-03-15 16:33:45,864 P12744 INFO ******** Test evaluation ********
+2024-03-15 16:33:45,864 P12744 INFO Loading data...
+2024-03-15 16:33:45,865 P12744 INFO Loading data from h5: ../../dataset/KIBA\test.h5
+2024-03-15 16:33:45,866 P12744 INFO Test samples: total/23270, pos/4463, neg/18807, ratio/19.18%, blocks/1
+2024-03-15 16:33:45,866 P12744 INFO Loading test data done.
+2024-03-15 16:33:59,966 P12744 INFO [Metrics] logloss: 0.336567 - ACC: 0.858917 - Precision: 0.713923 - Recall: 0.441183 - AUC: 0.860571 - AUPR: 0.631141
