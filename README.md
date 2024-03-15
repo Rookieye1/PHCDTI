@@ -1,10 +1,6 @@
 # PHCDTI
 A Parallel Drug–Protein Interaction Prediction Model Based on Deep Learning and Attention Mechanism.
 This repository contains the source code and the data.
-## Environment
-```
-pip install -r requirements.txt
-```
 ## Usage 
 All experiments were conducted on the open source framework Huawei FuxiCTR.
 
