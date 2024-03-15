@@ -22,7 +22,8 @@ python main_experiments.py
 + data: The datasets used in paper.
 	+ DrugBank.csv: 
 	+ KIBA.csv: 
-	+ Davis.csv
+	+ Davis.csv:
+ + 
 	The KIBA.csv file is too large to upload. In the directory of data, we now have the original data "DrugBank/KIBA/Davis.csv" as follows:
 
 	```
@@ -37,7 +38,10 @@ python main_experiments.py
 	DB08532 O00341 FC1=CC=CC=C1C1=... MVPHAILARGRDVCRRNGLLI... 0
 
 	```
-
++ PHCDTI.py: PHCDTI model architecture.
++ model_config.yaml: set the hyperparameter of PHCDTI
++ dataset_config.yaml: Variable information in PHCDTI
++ 
 
 
 ## Cite
