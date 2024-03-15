@@ -28,7 +28,7 @@ def evaluate_metrics(y_true, y_pred, metrics, **kwargs):
             result["ACC"] = accuracy_score(y_true, [round(x) for x in y_pred])
             result["Precision"] = precision_score(y_true, [round(x) for x in y_pred])
             result["Recall"] = recall_score(y_true, [round(x) for x in y_pred])
-            result[metric] = roc_auc_score(y_true, y_pred)+0.07
+            result[metric] = roc_auc_score(y_true, y_pred)
             # y_pred = np.argmax(y_pred, axis=1)
             precision1, recall1, _ = precision_recall_curve(y_true, [round(x) for x in y_pred])
             result["AUPR"] = auc(recall1, precision1)
