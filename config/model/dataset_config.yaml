@@ -1,0 +1,45 @@
+DrugBank:
+  data_root: ../../dataset/
+  data_format: csv
+  train_data: ./dataset/DTIs/DrugBank/DrugBank_trainE1.csv
+  valid_data: ./dataset/DTIs/DrugBank/DrugBank_testE1.csv
+  test_data: ./dataset/DTIs/DrugBank/DrugBank_testE1.csv
+  min_categr_count: 2
+  data_block_size: -1
+  feature_cols:
+    - {name: Drug_ID, active: True, dtype: str, type: categorical}
+    - {name: Protein_ID, active: True, dtype: str, type: categorical}
+    - {name: Drug_SMILES, active: True, dtype: str, type: categorical}
+    - {name: Amino_acid_sequence, active: True, dtype: str, type: categorical}
+  label_col: {name: interaction, dtype: float}
+
+Davis:
+  data_root: ../../dataset/
+  data_format: csv
+  train_data: ./dataset/DTIs/Davis/Davis_trainE1.csv
+  valid_data: ./dataset/DTIs/Davis/Davis_testE1.csv
+  test_data: ./dataset/DTIs/Davis/Davis_testE1.csv
+  min_categr_count: 2
+  data_block_size: -1
+  feature_cols:
+    - {name: Drug_ID, active: True, dtype: str, type: categorical}
+    - {name: Protein_ID, active: True, dtype: str, type: categorical}
+    - {name: Drug_SMILES, active: True, dtype: str, type: categorical}
+    - {name: Amino_acid_sequence, active: True, dtype: str, type: categorical}
+  label_col: {name: interaction, dtype: float}
+
+
+KIBA:
+  data_root: ../../dataset/
+  data_format: csv
+  train_data: ./dataset/DTIs/KIBA/KIBA_trainE1.csv
+  valid_data: ./dataset/DTIs/KIBA/KIBA_testE1.csv
+  test_data: ./dataset/DTIs/KIBA/KIBA_testE1.csv
+  min_categr_count: 2
+  data_block_size: -1
+  feature_cols:
+    - {name: Drug_ID, active: True, dtype: str, type: categorical}
+    - {name: Protein_ID, active: True, dtype: str, type: categorical}
+    - {name: Drug_SMILES, active: True, dtype: str, type: categorical}
+    - {name: Amino_acid_sequence, active: True, dtype: str, type: categorical}
+  label_col: {name: interaction, dtype: float}

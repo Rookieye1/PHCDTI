@@ -1,0 +1,86 @@
+Base:
+    model_root: './checkpoints/'
+    workers: 12
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    use_hdf5: True
+    save_best_only: True
+    every_x_epochs: 1
+    debug: False
+    version: 'pytorch'
+
+
+hoa_DrugBank:
+    model: HOA
+    dataset_id: DrugBank
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
+    task: binary_classification
+    optimizer: Adamax
+    dnn_hidden_units: [1024,512,512,256]
+    dnn_activations: LeakyReLU
+    net_regularizer: 0
+    embedding_regularizer: 0.11
+    learning_rate: 1.e-4
+    net_dropout: 0.12
+    batch_size: 32
+    embedding_dim: 64
+    reduction_ratio: 0.7
+    num_heads: 10
+    attention_dim: 20
+    epochs: 100
+    shuffle: True
+    seed: 2029
+    monitor: { 'AUC': 1, 'logloss': -1 }
+    monitor_mode: 'max'
+
+
+hoa_Davis:
+    model: HOA
+    dataset_id: Davis
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
+    task: binary_classification
+    optimizer: Adamax
+    dnn_hidden_units: [1024,512,512,256]
+    dnn_activations: LeakyReLU
+    net_regularizer: 0
+    embedding_regularizer: 0.11
+    learning_rate: 1.e-4
+    net_dropout: 0.12
+    batch_size: 32
+    embedding_dim: 64
+    reduction_ratio: 0.7
+    num_heads: 8
+    attention_dim: 20
+    epochs: 60
+    shuffle: True
+    seed: 2029
+    monitor: { 'AUC': 1, 'logloss': -1 }
+    monitor_mode: 'max'
+
+hoa_kiba:
+    model: HOA
+    dataset_id: KIBA
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
+    task: binary_classification
+    optimizer: Adamax
+    dnn_hidden_units: [1024,512,512,256]
+    dnn_activations: LeakyReLU
+    net_regularizer: 0
+    embedding_regularizer: 0.11
+    learning_rate: 1.e-4
+    net_dropout: 0.12
+    batch_size: 32
+    embedding_dim: 64
+    reduction_ratio: 0.7
+    num_heads: 8
+    attention_dim: 20
+    epochs: 60
+    shuffle: True
+    seed: 2025
+    monitor: { 'AUC': 1, 'logloss': -1 }
+    monitor_mode: 'max'
+
