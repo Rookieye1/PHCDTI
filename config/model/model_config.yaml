@@ -2,7 +2,7 @@ Base:
     model_root: './checkpoints/'
     workers: 12
     verbose: 1
-    patience: 2
+    patience: 20
     pickle_feature_encoder: True
     use_hdf5: True
     save_best_only: True
