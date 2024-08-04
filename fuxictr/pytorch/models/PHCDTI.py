@@ -21,13 +21,13 @@ from torch import nn
 import numpy as np
 import torch
 from PHCDTI.FuxiCTR.fuxictr.pytorch.models import BaseModel
-from PHCDTI.FuxiCTR.fuxictr.pytorch.layers import MLP_Layer, EmbeddingLayer, MultiHeadSelfAttention, SqueezeExcitationLayer, BilinearInteractionLayer, LR_Layer,CompressedInteractionNet
+from PHCDTI.FuxiCTR.fuxictr.pytorch.layers import MLP_Layer, EmbeddingLayer, MultiHeadSelfAttention, SqueezeExcitationLayer, PairInteractionLayer, LR_Layer,CompressedInteractionNet
 
 
 class PHCDTI(BaseModel):
     def __init__(self,
                  feature_map,
-                 model_id="HOA",
+                 model_id="PHCDTI",
                  gpu=1,
                  task="binary_classification",
                  learning_rate=1e-3,
