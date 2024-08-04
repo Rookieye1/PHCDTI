@@ -11,8 +11,8 @@ Base:
     version: 'pytorch'
 
 
-hoa_DrugBank:
-    model: HOA
+phcdti_DrugBank:
+    model: PHCDTI
     dataset_id: DrugBank
     loss: 'binary_crossentropy'
     metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
@@ -36,8 +36,8 @@ hoa_DrugBank:
     monitor_mode: 'max'
 
 
-hoa_Davis:
-    model: HOA
+phcdti_Davis:
+    model: PHCDTI
     dataset_id: Davis
     loss: 'binary_crossentropy'
     metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
@@ -60,8 +60,8 @@ hoa_Davis:
     monitor: { 'AUC': 1, 'logloss': -1 }
     monitor_mode: 'max'
 
-hoa_kiba:
-    model: HOA
+phcdti_kiba:
+    model: PHCDTI
     dataset_id: KIBA
     loss: 'binary_crossentropy'
     metrics: ['logloss', 'AUC','ACC','Recall','Precision','AUPR']
