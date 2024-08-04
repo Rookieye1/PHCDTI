@@ -34,7 +34,7 @@ class PHCDTI(BaseModel):
                  embedding_dim=10,
                  dnn_hidden_units=[1024, 512, 512],
                  reduction_ratio=0.7,
-                 bilinear_type="field_interaction",
+                 pair_type="field_interaction",
                  dnn_activations="ReLU",
                  attention_layers=10,
                  num_heads=8,
@@ -71,7 +71,7 @@ class PHCDTI(BaseModel):
         self.embedding_layer = EmbeddingLayer(feature_map, embedding_dim)
         self.num_fields = feature_map.num_fields
         self.senet_layer = SqueezeExcitationLayer(self.num_fields, reduction_ratio)
-        self.bilinear_interaction = BilinearInteractionLayer(self.num_fields, embedding_dim, bilinear_type)
+        self.pair_interaction = PairInteractionLayer(self.num_fields, embedding_dim, pair_type)
         self.lr_layer = LR_Layer(feature_map, output_activation=None, use_bias=False)
         self.lr_layer = LR_Layer(feature_map, output_activation=None, use_bias=False)
         self.Drug_CNNs = nn.Sequential(
@@ -132,13 +132,13 @@ class PHCDTI(BaseModel):
         proteinConv = self.Protein_CNNs(proteinembed)
         feature_emb = self.embedding_layer(X)
         senet_emb = self.senet_layer(feature_emb)  # size = [bz,nf,emb_dim]
-        bilinear_p = self.bilinear_interaction(feature_emb)  # size = [bz,C^(2)_(nf),emb_dim]
-        bilinear_q = self.bilinear_interaction(senet_emb)  # size = [bz,C^(2)_(nf),emb_dim]
+        pair_p = self.bilinear_interaction(feature_emb)  # size = [bz,C^(2)_(nf),emb_dim]
+        pair_q = self.bilinear_interaction(senet_emb)  # size = [bz,C^(2)_(nf),emb_dim]
         attention_out = self.self_attention(feature_emb) #size=[bz,nf,num_head*att_dim]
         # print(attention_out.shape)
         attention_out = torch.flatten(attention_out, start_dim=1)#size=[bz,nf*num_head*att_dim]
         # fig_attention_out = torch.mean(attention_out.reshape(self.bz, self.num_heads*self.num_fields, self.attention_dim), axis=1)
-        pair_out = torch.flatten(torch.cat([bilinear_p, bilinear_q], dim=1), start_dim=1)# size = [bz,nf*(nf-1)*emb_dim]
+        pair_out = torch.flatten(torch.cat([pair_p, pair_q], dim=1), start_dim=1)# size = [bz,nf*(nf-1)*emb_dim]
         # fig_bilinear_out = torch.mean(pair_out.reshape(self.bz, self.num_fields*(self.num_fields-1), self.embedding_dim), axis=1)
         dnn_out = self.dnn(pair_out)
         att_out = self.fc(attention_out)
