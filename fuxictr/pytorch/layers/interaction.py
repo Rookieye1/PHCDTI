@@ -113,33 +113,33 @@ class DualAttentionLayer(nn.Module):
 
 
 
-class BilinearInteractionLayer(nn.Module):
-    def __init__(self, num_fields, embedding_dim, bilinear_type="field_interaction"):
-        super(BilinearInteractionLayer, self).__init__()
-        self.bilinear_type = bilinear_type
-        if self.bilinear_type == "field_all":
-            self.bilinear_layer = nn.Linear(embedding_dim, embedding_dim, bias=False)
-        elif self.bilinear_type == "field_each":
-            self.bilinear_layer = nn.ModuleList([nn.Linear(embedding_dim, embedding_dim, bias=False)
+class PairInteractionLayer(nn.Module):
+    def __init__(self, num_fields, embedding_dim, pair_type="field_interaction"):
+        super(PairInteractionLayer, self).__init__()
+        self.pair_type = bilinear_type
+        if self.pair_type == "field_all":
+            self.pair_layer = nn.Linear(embedding_dim, embedding_dim, bias=False)
+        elif self.pair_type == "field_each":
+            self.pair_layer = nn.ModuleList([nn.Linear(embedding_dim, embedding_dim, bias=False)
                                                  for i in range(num_fields)])
-        elif self.bilinear_type == "field_interaction":
-            self.bilinear_layer = nn.ModuleList([nn.Linear(embedding_dim, embedding_dim, bias=False)
+        elif self.pair_type == "field_interaction":
+            self.pair_layer = nn.ModuleList([nn.Linear(embedding_dim, embedding_dim, bias=False)
                                                  for i, j in combinations(range(num_fields), 2)])
         else:
             raise NotImplementedError()
 
     def forward(self, feature_emb):
         feature_emb_list = torch.split(feature_emb, 1, dim=1)
-        if self.bilinear_type == "field_all":
-            bilinear_list = [self.bilinear_layer(v_i) * v_j
+        if self.pair_type == "field_all":
+            pair_list = [self.pair_layer(v_i) * v_j
                              for v_i, v_j in combinations(feature_emb_list, 2)]
-        elif self.bilinear_type == "field_each":
-            bilinear_list = [self.bilinear_layer[i](feature_emb_list[i]) * feature_emb_list[j]
+        elif self.pair_type == "field_each":
+            pair_list = [self.pair_layer[i](feature_emb_list[i]) * feature_emb_list[j]
                              for i, j in combinations(range(len(feature_emb_list)), 2)]
-        elif self.bilinear_type == "field_interaction":
-            bilinear_list = [self.bilinear_layer[i](v[0]) * v[1]
+        elif self.pair_type == "field_interaction":
+            pair_list = [self.pair_layer[i](v[0]) * v[1]
                              for i, v in enumerate(combinations(feature_emb_list, 2))]
-        return torch.cat(bilinear_list, dim=1)
+        return torch.cat(pair_list, dim=1)
 
 
 class HolographicInteractionLayer(nn.Module):
