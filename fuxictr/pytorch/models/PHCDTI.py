@@ -73,7 +73,6 @@ class PHCDTI(BaseModel):
         self.senet_layer = SqueezeExcitationLayer(self.num_fields, reduction_ratio)
         self.pair_interaction = PairInteractionLayer(self.num_fields, embedding_dim, pair_type)
         self.lr_layer = LR_Layer(feature_map, output_activation=None, use_bias=False)
-        self.lr_layer = LR_Layer(feature_map, output_activation=None, use_bias=False)
         self.Drug_CNNs = nn.Sequential(
             nn.Conv1d(in_channels=1, out_channels=self.embedding_dim*2, kernel_size=self.drug_kernel[0]),
             nn.ReLU(),
