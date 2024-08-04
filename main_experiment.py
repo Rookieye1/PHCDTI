@@ -42,9 +42,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 if __name__ == '__main__':
     experments = [
         # "dnn_DrugBank"
-        "hoa_DrugBank"
-        # "hoa_Davis"
-        # "hoa_kiba"
+        "phcdti_DrugBank"
+        # "phcdti_Davis"
+        # "phcdti_kiba"
     ]
 
     for experment_id in experments:
