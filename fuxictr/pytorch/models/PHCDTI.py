@@ -138,9 +138,9 @@ class PHCDTI(BaseModel):
         # print(attention_out.shape)
         attention_out = torch.flatten(attention_out, start_dim=1)#size=[bz,nf*num_head*att_dim]
         # fig_attention_out = torch.mean(attention_out.reshape(self.bz, self.num_heads*self.num_fields, self.attention_dim), axis=1)
-        bilinear_out = torch.flatten(torch.cat([bilinear_p, bilinear_q], dim=1), start_dim=1)# size = [bz,nf*(nf-1)*emb_dim]
-        # fig_bilinear_out = torch.mean(bilinear_out.reshape(self.bz, self.num_fields*(self.num_fields-1), self.embedding_dim), axis=1)
-        dnn_out = self.dnn(bilinear_out)
+        pair_out = torch.flatten(torch.cat([bilinear_p, bilinear_q], dim=1), start_dim=1)# size = [bz,nf*(nf-1)*emb_dim]
+        # fig_bilinear_out = torch.mean(pair_out.reshape(self.bz, self.num_fields*(self.num_fields-1), self.embedding_dim), axis=1)
+        dnn_out = self.dnn(pair_out)
         att_out = self.fc(attention_out)
         y_pred = self.output_activation(dnn_out + att_out + self.lr_layer(X))
         return_dict = {"y_true": y, "y_pred": y_pred}
