@@ -131,8 +131,8 @@ class PHCDTI(BaseModel):
         proteinConv = self.Protein_CNNs(proteinembed)
         feature_emb = self.embedding_layer(X)
         senet_emb = self.senet_layer(feature_emb)  # size = [bz,nf,emb_dim]
-        pair_p = self.bilinear_interaction(feature_emb)  # size = [bz,C^(2)_(nf),emb_dim]
-        pair_q = self.bilinear_interaction(senet_emb)  # size = [bz,C^(2)_(nf),emb_dim]
+        pair_p = self.pair_interaction(feature_emb)  # size = [bz,C^(2)_(nf),emb_dim]
+        pair_q = self.pair_interaction(senet_emb)  # size = [bz,C^(2)_(nf),emb_dim]
         attention_out = self.self_attention(feature_emb) #size=[bz,nf,num_head*att_dim]
         # print(attention_out.shape)
         attention_out = torch.flatten(attention_out, start_dim=1)#size=[bz,nf*num_head*att_dim]
